@@ -1,13 +1,13 @@
-This project of combination of nginx nginx-vod-module and srs(simple rtmp server)
+This project combine the nginx nginx-vod-module and srs(simple rtmp server) together, to provide abiltiy of vod and live broadcast
 
-Build everything by run command:
+Build and install everything by run command:
       make.sh path_to_install_everything
 
 Run the sample server by run command:
     start.sh
 in the path where you specified in the build step
 
-In the path where you installed everything, you will find a dir named "html"
+In the path where you installed everything, you will find a dir named "html/movie"
 the movie dir is the place to hold the video for vod
 
 To play the vod use the url:
@@ -17,4 +17,4 @@ To play the live broadcast:
    1. you need feed rtmp stream to port 1935
    2. play it at:
       http://domain/[app]/[stream].m3u8
-      replace app and stream with you own
+      replace app and stream with your own
