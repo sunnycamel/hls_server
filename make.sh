@@ -17,7 +17,7 @@ SRS=$PWD/srs-2.0
 
 MODULESDIR=$NGINX/modules
 
-git clone https://github.com/kaltura/nginx-vod-module.git $MODULESDIR/nginx-vod-module
+git clone https://github.com/kaltura/nginx-vod-module.git $MODULESDIR/nginx-vod-module && \
 
 cd $NGINX && ./configure  \
     --prefix=$NGINX_PREFIX \
@@ -54,17 +54,17 @@ cd $NGINX && ./configure  \
     --add-module=$MODULESDIR/nginx-upstream-fair \
     --add-module=$MODULESDIR/ngx_http_substitutions_filter_module \
     --add-module=$MODULESDIR/nginx-vod-module \
-&& make && make install
+&& make && make install && \
 
-git clone https://github.com/sunnycamel/simple-rtmp-server.git $SRS
+git clone https://github.com/sunnycamel/simple-rtmp-server.git $SRS && \
 
 cd $SRS/trunk && ./configure  \
     --prefix=$SRS_PREFIX \
     --disable-all --with-ssl \
     --with-hls \
-&& make && make install
+&& make && make install && \
 
-cp $SCRIPT_DIR/start.sh $PREFIX
+cp $SCRIPT_DIR/start.sh $PREFIX && \
 
 cp -r $SCRIPT_DIR/html $PREFIX
 
