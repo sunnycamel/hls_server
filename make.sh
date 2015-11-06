@@ -17,7 +17,7 @@ SRS=$PWD/srs-2.0
 
 MODULESDIR=$NGINX/modules
 
-git clone https://github.com/kaltura/nginx-vod-module.git $MODULEDIR/nginx-vod-module
+git clone https://github.com/kaltura/nginx-vod-module.git $MODULESDIR/nginx-vod-module
 
 cd $NGINX && ./configure  \
     --prefix=$NGINX_PREFIX \
