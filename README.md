@@ -18,3 +18,8 @@ To play the live broadcast:
    2. play it at:
       http://domain/[app]/[stream].m3u8
       replace app and stream with your own
+
+
+BTW:
+if you find some dependency issue on build nginx and you are on Ubuntu try this trick:
+sudo apt-get build-dep nginx
