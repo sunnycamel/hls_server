@@ -56,6 +56,7 @@ cd $NGINX && ./configure  \
     --add-module=$MODULESDIR/nginx-vod-module \
 && make && make install && \
 
+rm -rf $SRS
 git clone https://github.com/sunnycamel/simple-rtmp-server.git $SRS && \
 
 cd $SRS/trunk && ./configure  \
