@@ -17,8 +17,7 @@ SRS=$PWD/srs-2.0
 
 MODULESDIR=$NGINX/modules
 rm -rf $MODULESDIR/nginx-vod-module
-git clone https://github.com/kaltura/nginx-vod-module.git $MODULESDIR/nginx-vod-module && \
-
+git clone https://github.com/sunnycamel/nginx-vod-module.git $MODULESDIR/nginx-vod-module && \
 cd $NGINX && ./configure  \
     --prefix=$NGINX_PREFIX \
     --conf-path=$NGINX_PREFIX/conf/nginx.conf \
@@ -59,7 +58,8 @@ cd $NGINX && ./configure  \
 rm -rf $SRS
 git clone https://github.com/sunnycamel/simple-rtmp-server.git $SRS && \
 
-cd $SRS/trunk && ./configure  \
+cd $SRS/trunk && git checkout origin/2.0release -b 2.0release && \
+./configure  \
     --prefix=$SRS_PREFIX \
     --disable-all --with-ssl \
     --with-hls \
