@@ -19,7 +19,7 @@ To play the live broadcast:
       http://domain/[app]/[stream].m3u8
       replace app and stream with your own
 
-A sample site is also deployed, you can try it at http://domian:8088
+A sample site is also deployed, you can try it at http://domian:8080
 
 BTW:
 if you find some dependency issue on build nginx and you are on Ubuntu try this trick:
