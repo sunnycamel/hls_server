@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
 <head>
-<title>Welcome to nginx!</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
+
+   <!-- player skin -->
+   <link rel="stylesheet" href="skin/functional.css">
+
+   <!-- site specific styling -->
+   <style>
+   body { font: 12px "Myriad Pro", "Lucida Grande", sans-serif; text-align: center; padding-top: 5%; }
+   .flowplayer { width: 80%; }
+   </style>
+
+   <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
+   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+   <!-- include flowplayer -->
+   <script src="flowplayer.min.js"></script>
+   <script src="/hls.js"></script>
+   <script src="/flowplayer.hlsjs.js"></script>
 </head>
+
 <body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
-
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx.</em></p>
+   <div class="flowplayer" data-swf="flowplayer.swf" data-ratio="0.4167">
+     <video>
+       <source type="application/x-mpegurl"
+               src="/movie/1.mp4/index.m3u8">
+     </video>
+   </div>
 </body>
-</html>
