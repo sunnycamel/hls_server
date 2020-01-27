@@ -9,15 +9,15 @@ PWD=`pwd`
 
 PREFIX=`readlink -f $1`
 NGINX_PREFIX=$PREFIX/nginx
-SRS_PREFIX=$PREFIX/srs
 SCRIPT_DIR=$PWD/script
 
-NGINX=$PWD/nginx-1.8.0
-SRS=$PWD/srs-2.0
+NGINX=$PWD/nginx-1.16.1
 
 MODULESDIR=$NGINX/modules
 rm -rf $MODULESDIR/nginx-vod-module
-git clone https://github.com/sunnycamel/nginx-vod-module.git $MODULESDIR/nginx-vod-module && \
+
+git clone https://github.com/kaltura/nginx-vod-module.git $MODULESDIR/nginx-vod-module && \
+cd $MODULESDIR/nginx-vod-module && git checkout 1.25 -b release-1.25 && \
 cd $NGINX && ./configure  \
     --prefix=$NGINX_PREFIX \
     --conf-path=$NGINX_PREFIX/conf/nginx.conf \
@@ -42,30 +42,14 @@ cd $NGINX && ./configure  \
     --with-http_geoip_module \
     --with-http_gzip_static_module \
     --with-http_image_filter_module \
-    --with-http_spdy_module \
     --with-http_sub_module \
     --with-http_xslt_module \
     --with-mail \
     --with-mail_ssl_module \
-    --add-module=$MODULESDIR/nginx-auth-pam \
-    --add-module=$MODULESDIR/nginx-dav-ext-module \
-    --add-module=$MODULESDIR/nginx-echo \
-    --add-module=$MODULESDIR/nginx-upstream-fair \
-    --add-module=$MODULESDIR/ngx_http_substitutions_filter_module \
     --add-module=$MODULESDIR/nginx-vod-module \
 && make && make install && \
 
-rm -rf $SRS
-git clone https://github.com/sunnycamel/simple-rtmp-server.git $SRS && \
-
-cd $SRS/trunk && git checkout origin/2.0release -b 2.0release && \
-./configure  \
-    --prefix=$SRS_PREFIX \
-    --disable-all --with-ssl \
-    --with-hls \
-&& make && make install && \
-
 cp $SCRIPT_DIR/start.sh $PREFIX && \
+cp $SCRIPT_DIR/stop.sh $PREFIX && \
 
 cp -r $SCRIPT_DIR/html $PREFIX
-

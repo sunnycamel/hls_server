@@ -13,12 +13,6 @@ the movie dir is the place to hold the video for vod
 To play the vod use the url:
    http://domain/movie/video_filename/index.m3u8
 
-To play the live broadcast:
-   1. you need feed rtmp stream to port 1935
-   2. play it at:
-      http://domain/[app]/[stream].m3u8
-      replace app and stream with your own
-
 A sample site is also deployed, you can try it at http://domian:8080
 
 BTW:
