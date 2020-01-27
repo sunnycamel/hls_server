@@ -13,7 +13,7 @@ the movie dir is the place to hold the video for vod
 To play the vod use the url:
    http://domain/movie/video_filename/index.m3u8
 
-A sample site is also deployed, you can try it at http://domian:8080
+A sample site is also deployed, you can try it at http://domian:8088
 
 BTW:
 if you find some dependency issue on build nginx and you are on Ubuntu try this trick:
